@@ -8,43 +8,41 @@ app.get('/', (req, res) =>{
 );
 
 
-//get a list of 5 jokes
-app.get('/jokes', (req, res) =>{
-
+// Get a list of 5 jokes
+app.get('/jokes', (req, res) => {
     const jokes = [
         {
-            id:1,
+            id: 1,
             title: 'A joke',
             content: 'This is a joke'
-
         },
         {
-            id:2,
+            id: 2,
             title: 'Another joke',
             content: 'This is another joke'
         },
         {
-            id:3,
+            id: 3,
             title: 'A third joke',
-            content: 'This is third joke'
+            content: 'This is a third joke'
         },
         {
-            id:4,
+            id: 4,
             title: 'A fourth joke',
-            content: 'This is fourth joke'
+            content: 'This is a fourth joke'
         },
         {
-            id:5,
-            title: 'A fith joke',
-            content: 'This is fifth joke'
+            id: 5,
+            title: 'A fifth joke',
+            content: 'This is a fifth joke'
         }
-    ]
-    res.send('jokes');
-   }
-);
-const port = process.env.PORT  || 3000;
+    ];
+
+    res.json(jokes); // send array as JSON instead of string
+});
+
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
-    console.log(`serve at http://localhost:${port}`);
-  }
-);
+    console.log(`Server running at http://localhost:${port}`);
+});
